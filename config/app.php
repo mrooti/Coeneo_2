@@ -177,6 +177,8 @@ return [
         // coeneo\Providers\BroadcastServiceProvider::class,
         coeneo\Providers\EventServiceProvider::class,
         coeneo\Providers\RouteServiceProvider::class,
+        //propios
+        Laracasts\Flash\FlashServiceProvider::class,
 
     ],
 
