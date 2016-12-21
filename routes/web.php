@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('index/index');
 });
+Route::get('productos',[
+	'uses'	=>	'Controller@productos',
+	'as'	=>	'productos'
+	]);
 Route::POST('/contacto',[
 		'uses'	=>	'Controller@contacto',
 		'as'	=>	'contacto'
