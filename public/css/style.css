@@ -61,7 +61,9 @@ footer.page-footer {
 .mt-5{
   margin-top: 5px;
 }
-
+.mt-25{
+  margin-top: 25px!important;
+}
 /*
   Imagen size
 */
@@ -86,4 +88,11 @@ Titulos
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/*
+Font size
+*/
+.f{
+  font-size: 90px;
+  color: #8d6e63;
 }
