@@ -1,7 +1,7 @@
 @extends('main')
 @section('title','Inicio')
 @section('nav')
-@include('nav')
+@include('navproductos')
 @endsection
 @section('content')
 <div id="index-banner" class="parallax-container principal">
@@ -59,7 +59,13 @@
         </div>
       </div>
       <div class="col l3">
+      <div class="icon-block center">
         <img src="{{asset('images/productos/resultado.png')}}" alt="resultado" class="responsive-img">
+        <h5 class="center">Producto</h5>
+        <p class="light">
+          Torisanas Romerinas&#174; son productos de harina de la más alta calidad en el mercado.
+        </p>
+      </div>
       </div>
     </div>
   </div>
@@ -82,26 +88,7 @@
       <h3 class="center">Línea de Productos</h3>
       <p class="center">Nuentra prioridad es brindar el mejor servicio al cliente.</p>
     </div>
-    <div class="row">
-      <div class="col l2">
-
-        <img class="responsive-img circle" src="{{asset('images/azteca.jpg')}}" alt="">
-      </div>
-      <div class="col l3">
-        <img class="responsive-img circle" src="{{asset('images/codallos.png')}}" alt="">
-      </div>
-      <div class="col l3">
-        <img class="responsive-img circle" src="{{asset('images/sunny.png')}}" alt="">
-      </div>
-      <div class="col l3">
-        <img class="responsive-img" src="{{asset('images/violeta.jpg')}}" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col l2 offset-l5">
-        <img class="responsive-img" src="{{asset('images/zorro.png')}}" alt="">
-      </div>
-    </div>
+    
   </div>
 </div>
 

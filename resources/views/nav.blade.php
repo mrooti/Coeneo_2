@@ -13,6 +13,7 @@
       <li><a href="#">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#clientes">Clientes</a></li>
+      <li><a href="{!!route('productos')!!}">Productos</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>

@@ -38,7 +38,13 @@
 	        <div class="col l3 s12">
 	          <h5 class="white-text">Contacto</h5>
 	          <ul>
-	            <li><a class="white-text" href="mailto:contacto@productosalimenticioscoeneo.com">ventas@productosalimenticioscoeneo.com</a></li>
+	          	<li>
+	            	<button class="btn waves-effect waves-light brown lighten-2 modal-trigger" data-target="mensaje">Escribenos
+					    <i class="material-icons right">send</i>
+					 </button>
+	          	</li>
+				<li class="center"></li>
+	            <li class="mt-5"><a class="white-text" href="mailto:contacto@productosalimenticioscoeneo.com">ventas@productosalimenticioscoeneo.com</a></li>
 	            <li><a class="white-text" href="#!">+52 (454) 354 0206 </a></li>
 	          </ul>
 	        </div>
@@ -56,11 +62,55 @@
 	      </div>
 	      </div>
 	    </div>
-	  </footer>
+	</footer>
+	<!-- Inicio - Modal para mensajes -->
+	<div id="mensaje" class="modal">
+	   <div class="modal-content">
+	      <h4 class="center">¡Dejanos tu mensaje!</h4>
+	      <div class="row">
+	      	<div class="col l12 input-field">
+	      	 	<i class="material-icons prefix">account_circle</i>
+	      		{!! Form::label("nombre","Nombre Completo") !!}
+	      		{!! Form::text("nombre",null,["class"=>"validate","id"=>"nombre","required"=>"required"]) !!}
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="col l6 input-field">
+	      		<i class="material-icons prefix">email</i>
+	      		{!! Form::label("email","Correo Electronico") !!}
+	      		{!! Form::email("email",null,["class"=>"validate","id"=>"email","required"=>"required"]) !!}
+	      	</div>
+	      	<div class="col l6 input-field">
+	      		<i class="material-icons prefix">phone</i>
+	      		{!! Form::label("numero","Teléfono (Opcional)") !!}
+	      		{!! Form::number("numero",null,["class"=>"validate","id"=>"numero"]) !!}
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="col l12 input-field">
+	      		<i class="material-icons prefix">message</i>
+	      		{!! Form::label("cuerpo","Mensaje") !!}
+	      		{!! Form::text("cuerpo",null,["class"=>"validate","id"=>"cuerpo","length"=>"120","required"=>"required"]) !!}
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="col l12 center-align">
+	      		<div class="g-recaptcha" data-sitekey="6LfrFAQTAAAAAGyU2iyBEZ7KAbWoB09_aBbpBNUs"></div>
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="col l12 input-field center-align">
+	      		{!! Form::submit("Enviar",["class"=>"btn waves-effect waves-light brown lighten-2"]) !!}
+	      	</div>
+	      </div>
+	    </div>
+	</div>	
+	<!-- Fin - Modal para mensajes -->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="{{asset('js/materialize.js')}}"></script>
-	<script src="{{asset('js/init.js')}}"></script>
 	<script src="{{asset('js/scripts.js')}}"></script>
+	<script src="{{asset('js/init.js')}}"></script>
 	<script>
 		$(document).ready(function(){
 			$(".button-collapse").sideNav({

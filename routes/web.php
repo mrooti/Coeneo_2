@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('index/index');
-});
+})->name('index');
 Route::get('productos',[
 	'uses'	=>	'Controller@productos',
 	'as'	=>	'productos'
