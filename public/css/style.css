@@ -64,6 +64,10 @@ footer.page-footer {
 .mt-25{
   margin-top: 25px!important;
 }
+/*disable*/
+.disable{
+  display: none;
+}
 /*
   Imagen size
 */
@@ -84,7 +88,7 @@ Titulos
   padding-right: 5%;
 }
 .principal{
-  min-height: 50vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,4 +99,9 @@ Font size
 .f{
   font-size: 90px;
   color: #8d6e63;
+}
+/*Shadows*/
+.text-sh{
+  font-size: 3rem;
+  text-shadow: black 10px 10px 20px;
 }

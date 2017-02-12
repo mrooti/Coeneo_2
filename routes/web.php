@@ -10,10 +10,14 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+use coeneo\Mail\Contacto;
 Route::get('/', function () {
     return view('index/index');
 })->name('index');
+Route::get("/mail",function(){
+	Mail::to("no-replay@productosalimenticioscoeneo.com")->send(new Contacto);
+	//mail("rogelioroger281@gmail.com","prueba","Hola","equis");
+});
 Route::get('productos',[
 	'uses'	=>	'Controller@productos',
 	'as'	=>	'productos'

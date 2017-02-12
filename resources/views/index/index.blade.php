@@ -9,7 +9,7 @@
     <div class="container">
       <br><br>
       <div class="row">
-        <div class="col l12 center">
+        <div class="col l12 center disable titulos">
         <h2 class="titulo_1">Un exterior saludable</h2>
         <h2 class="titulo_2">inicia desde el interior</h2>
         </div>
@@ -27,11 +27,11 @@
 
 <div class="container" id="nosotros">
   <div class="section">
-    <h3 class="row center">Nosotros</h3>
+    <h3 class="row center disable nosotros">Nosotros</h3>
     <!--   Icon Section   -->
     <div class="row">
       <div class="col s12 m4">
-        <div class="icon-block center">
+        <div class="icon-block center disable mision">
           <!--<h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
           -->
           <img class="responsive-img img-50" src="{{asset('images/mision.png')}}" alt="mision">
@@ -41,7 +41,7 @@
       </div>
 
       <div class="col s12 m4">
-        <div class="icon-block center">
+        <div class="icon-block center disable vision">
           <img class="responsive-img img-50" src="{{asset('images/vision.png')}}" alt="vision">
           <h5 class="center">Visión</h5>
 
@@ -50,8 +50,8 @@
       </div>
 
       <div class="col s12 m4">
-        <div class="icon-block center">
-          <img class="responsive-img img-50" src="{{asset('images/valores.png')}}" alt="valores">
+        <div class="icon-block center disable valores">
+          <img class="responsive-img img-50"" src="{{asset('images/valores.png')}}" alt="valores">
           <h5 class="center">Valores</h5>
 
           <p class="light">Familia, trabajo en equipo, respeto, honestidad, tolerancia, paciencia y comunicación.</p>
@@ -65,7 +65,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">"El real sabor de Coeneo"</h5>
+        <h5 class="header col s12 light text-sh">"El real sabor de Coeneo"</h5>
       </div>
     </div>
   </div>
@@ -80,21 +80,21 @@
     </div>
     <div class="row">
       <div class="col l2">
-        <img class="responsive-img circle" src="{{asset('images/azteca.jpg')}}" alt="">
+        <img class="responsive-img circle clientes disable" src="{{asset('images/azteca.jpg')}}" alt="">
       </div>
       <div class="col l3">
-        <img class="responsive-img circle" src="{{asset('images/codallos.png')}}" alt="">
+        <img class="responsive-img circle clientes disable" src="{{asset('images/codallos.png')}}" alt="">
       </div>
       <div class="col l3">
-        <img class="responsive-img circle" src="{{asset('images/sunny.png')}}" alt="">
+        <img class="responsive-img circle clientes disable" src="{{asset('images/sunny.png')}}" alt="">
       </div>
       <div class="col l3">
-        <img class="responsive-img" src="{{asset('images/violeta.jpg')}}" alt="">
+        <img class="responsive-img circle clientes disable" src="{{asset('images/violeta.jpg')}}" alt="">
       </div>
     </div>
     <div class="row">
       <div class="col l2 offset-l5">
-        <img class="responsive-img" src="{{asset('images/zorro.png')}}" alt="">
+        <img class="responsive-img circle clientes disable" src="{{asset('images/zorro.png')}}" alt="">
       </div>
     </div>
   </div>
@@ -104,7 +104,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">"Nuestros ingredientes son 100% naturales"</h5>
+        <h5 class="header col s12 light text-sh slogan2 disable">"Nuestros ingredientes son 100% naturales"</h5>
       </div>
     </div>
   </div>
@@ -128,7 +128,8 @@
 </div>
 @endsection
 @section('scripts')
-  /*var options = [ {selector: '#paso', offset: 50, callback: function(el) { Materialize.toast("This is our ScrollFire Demo!", 1500 ); } }, {selector: '#staggered-test', offset: 205, callback: function(el) { Materialize.toast("Please continue scrolling!", 1500 ); } }, {selector: '#staggered-test', offset: 400, callback: function(el) { Materialize.showStaggeredList($(el)); } }, {selector: '#image-test', offset: 500, callback: function(el) { Materialize.fadeInImage($(el)); } } ]; Materialize.scrollFire(options);*/
+  
+
 @endsection
 @section('functions')
   var map;
@@ -146,5 +147,4 @@
       title: 'Productos Alimenticios Coeneo'
     });
   }
-
 @endsection

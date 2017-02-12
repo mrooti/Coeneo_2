@@ -10,7 +10,7 @@
       <br><br>
       <div class="row">
         <div class="col l12 center">
-        <h2>Conoce nuestros productos</h2>
+        <h2 class="text-sh title">Conoce nuestros productos</h2>
         </div>
       </div>
       <!--<div class="row">
@@ -75,7 +75,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">"El real sabor de Coeneo"</h5>
+        <h5 class="header col s12 light text-sh">"El real sabor de Coeneo"</h5>
       </div>
     </div>
   </div>
@@ -96,7 +96,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">"Nuestros ingredientes son 100% naturales"</h5>
+        <h5 class="header col s12 light text-sh">"Nuestros ingredientes son 100% naturales"</h5>
       </div>
     </div>
   </div>

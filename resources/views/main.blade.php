@@ -7,6 +7,7 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/materialize.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
 	<link href="https://file.myfontastic.com/p33ryNdn2ug99gf3MgkiUK/icons.css" rel="stylesheet">
 </head>
 <body>
@@ -49,6 +50,20 @@
 	          </ul>
 	        </div>
 	      </div>
+	      <div class="row">
+	      	<div class="col l6">
+	      		<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=1672808296373531";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+				<div class="fb-page" data-href="https://www.facebook.com/Productos.Coeneo/" data-tabs="timeline" data-small-header="true" data-width="500" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Productos.Coeneo/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Productos.Coeneo/">Productos Alimenticios Coeneo</a></blockquote></div>
+	      	</div>
+	      </div>
 	    </div>
 	    <div class="footer-copyright">
 	      <div class="container">
@@ -64,6 +79,7 @@
 	    </div>
 	</footer>
 	<!-- Inicio - Modal para mensajes -->
+	{!! Form::open(['route'=>'contacto', 'method'=>'POST'])!!}
 	<div id="mensaje" class="modal">
 	   <div class="modal-content">
 	      <h4 class="center">¡Dejanos tu mensaje!</h4>
@@ -94,34 +110,74 @@
 	      	</div>
 	      </div>
 	      <div class="row">
-	      	<div class="col l12 center-align">
-	      		<div class="g-recaptcha" data-sitekey="6LfrFAQTAAAAAGyU2iyBEZ7KAbWoB09_aBbpBNUs"></div>
+	      	<div class="col l12 center-align offset-l3">
+	      		<!--<div class="g-recaptcha" data-sitekey="6LfrFAQTAAAAAGyU2iyBEZ7KAbWoB09_aBbpBNUs"></div>-->
 	      	</div>
 	      </div>
 	      <div class="row">
-	      	<div class="col l12 input-field center-align">
+	      	<div class="col l12 input-field center-align offset-s5">
 	      		{!! Form::submit("Enviar",["class"=>"btn waves-effect waves-light brown lighten-2"]) !!}
 	      	</div>
 	      </div>
 	    </div>
-	</div>	
+	</div>
+	{!!Form::close()!!}	
 	<!-- Fin - Modal para mensajes -->
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 	<script src="{{asset('js/materialize.js')}}"></script>
 	<script src="{{asset('js/scripts.js')}}"></script>
 	<script src="{{asset('js/init.js')}}"></script>
 	<script>
 		$(document).ready(function(){
 			$(".button-collapse").sideNav({
-				 edge: 'left', // Choose the horizontal origin
-				 closeOnClick: true
+				 menuWidth: 200, // Default is 300
+			      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+			      draggable: true // Choose whether you can drag to open on touch screens
 				});
 			if($('#flash-overlay-modal')[0]){
 				$('#flash-overlay-modal').openModal();   
 			}
 			$('.modal-trigger').leanModal();
 			$('select').material_select();
+			//animaciones
+			var options = [
+			    {selector: '.nosotros', offset: 0, callback: function(){
+			      $(".nosotros").removeClass("disable");
+			      $('.nosotros').animateCss("fadeIn");
+			    } },
+			    {selector: '.mision', offset: 20, callback: function(){
+			      $(".mision").removeClass("disable");
+			      $(".vision").removeClass("disable");
+			      $(".valores").removeClass("disable");
+			      $('.mision').css("-webkit-animation-delay","0.1s").animateCss("fadeInLeft");
+			      $('.vision').css("-webkit-animation-delay","0.3s").animateCss("fadeInLeft");
+			      $('.valores').css("-webkit-animation-delay","0.5s").animateCss("fadeInLeft");
+			    } },
+			    {selector: '.clientes', offset: 200, callback: function(){
+			      $(".clientes").removeClass("disable");
+			      var time=0;
+			      $(".clientes").each(function(){
+			          $(this).css("-webkit-animation-delay",time+"s").animateCss("fadeIn");
+			          time+=1;
+			      });
+			    } },
+			    {selector: '.slogan2', offset: 200, callback: function(){
+			      $(".slogan2").removeClass("disable");
+			      $(".slogan2").css("-webkit-animation-delay","2s").animateCss("fadeIn");
+			    } }
+
+			  ];
+			  Materialize.scrollFire(options);
+			  var time=0.1;
+			  $(".right.hide-on-med-and-down").children().each(function(){
+			    $(this).removeClass("disable");
+			    $(this).css("-webkit-animation-delay",time+"s");
+			    $(this).animateCss("bounceInDown");
+			    time+=0.1;
+			  });
+			  $(".titulos").removeClass("disable");
+			  $(".titulo_1").animateCss("bounceInLeft");
+			  $(".titulo_2").animateCss("animated bounceInRight");
 			@yield('scripts')
 		});
 		@yield('functions')
